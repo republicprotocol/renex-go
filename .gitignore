@@ -1,0 +1,11 @@
+# Profiling
+*.out
+
+# Tests
+*.test
+
+# Dep
+vendor
+
+# Submodules
+modules
