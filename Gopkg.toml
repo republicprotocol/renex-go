@@ -1,0 +1,11 @@
+[metadata.heroku]
+  root-package = "github.com/republicprotocol/darknode-proxy-go"
+  install = "./cmd/proxy"
+
+[[constraint]]
+  name = "github.com/gorilla/mux"
+  version = "1.6.2"
+
+[prune]
+  go-tests = true
+  unused-packages = true
