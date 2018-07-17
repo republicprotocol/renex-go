@@ -15,8 +15,8 @@ import (
 func main() {
 	// Load environment variables.
 	// TODO: Uncomment environment variables before deploy
-	port := 3001    // os.Getenv("PORT")
-	network := "f∅" // os.Getenv("NETWORK")
+	port := 3001         // os.Getenv("PORT")
+	network := "nightly" // os.Getenv("NETWORK")
 	if network == "" {
 		log.Fatalf("cannot read network environment")
 	}
