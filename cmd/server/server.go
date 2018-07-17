@@ -76,7 +76,16 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}) {
 		return
 	}
 
-	if tmpl, err = tmpl.Parse(`{{define "env"}}<script type="text/javascript">window.NETWORK=` + string(networkData) + `;</script>{{end}}`); err != nil {
+	if tmpl, err = tmpl.Parse(`
+	{{define "env"}}
+	<script type="text/javascript">
+		window.NETWORK=` + string(networkData) + `;
+		if (window.NETWORK.ethNetwork !== 'mainnet') {
+			document.title = 'RenEx (' + window.NETWORK.ethNetworkLabel + ' Test Network)';
+		}
+	</script>
+	{{end}}
+	`); err != nil {
 		w.WriteHeader(500)
 		w.Write([]byte(fmt.Sprintf("cannot execute template: %v", err)))
 		return
