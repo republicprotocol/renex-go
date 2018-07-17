@@ -30,7 +30,14 @@ func main() {
 
 	r := mux.NewRouter().StrictSlash(true)
 	r.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		serveResponse(w, r, config)
+		fullPath := path.Join("./ui/", r.URL.Path)
+		if stat, err := os.Stat(fullPath); err == nil && !stat.IsDir() {
+			// A file exists so serve it statically.
+			http.FileServer(http.Dir("./ui")).ServeHTTP(w, r)
+		} else {
+			// A file does not exist so serve the UI template.
+			serveTemplate(w, r, config)
+		}
 	})
 
 	http.Handle("/", cors.New(cors.Options{
@@ -53,17 +60,6 @@ func loadConfig(configFile string) (interface{}, error) {
 	var data interface{}
 	json.Unmarshal(file, &data)
 	return data, nil
-}
-
-func serveResponse(w http.ResponseWriter, r *http.Request, config interface{}) {
-	fullPath := path.Join("./ui/", r.URL.Path)
-	if stat, err := os.Stat(fullPath); err == nil && !stat.IsDir() {
-		// A file exists so serve it statically
-		http.FileServer(http.Dir("./ui/")).ServeHTTP(w, r)
-	} else {
-		// A file does not exist so serve the UI template
-		serveTemplate(w, r, config)
-	}
 }
 
 func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}) {
