@@ -7,6 +7,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"path"
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
@@ -28,10 +30,10 @@ func main() {
 	}
 
 	r := mux.NewRouter().StrictSlash(true)
-	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		serveTemplate(w, r, config)
+	r.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		serveResponse(w, r, config)
 	})
-	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./ui")))
+
 	http.Handle("/", cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"},
 		AllowCredentials: true,
@@ -52,6 +54,17 @@ func loadConfig(configFile string) (interface{}, error) {
 	var data interface{}
 	json.Unmarshal(file, &data)
 	return data, nil
+}
+
+func serveResponse(w http.ResponseWriter, r *http.Request, config interface{}) {
+	fullPath := path.Join("./ui/", r.URL.Path)
+	if stat, err := os.Stat(fullPath); err == nil && !stat.IsDir() {
+		// A file exists so serve it statically
+		http.FileServer(http.Dir("./ui/")).ServeHTTP(w, r)
+	} else {
+		// A file does not exist so serve the UI template
+		serveTemplate(w, r, config)
+	}
 }
 
 func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}) {
