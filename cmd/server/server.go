@@ -15,8 +15,8 @@ import (
 func main() {
 	// Load environment variables.
 	// TODO: Uncomment environment variables before deploy
-	port := 3001    // os.Getenv("PORT")
-	network := "f∅" // os.Getenv("NETWORK")
+	port := 3001         // os.Getenv("PORT")
+	network := "nightly" // os.Getenv("NETWORK")
 	if network == "" {
 		log.Fatalf("cannot read network environment")
 	}
@@ -63,7 +63,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}) {
 	}
 
 	// Create template file and insert environment variables.
-	tmpl, err := template.ParseFiles("./public/index.html")
+	tmpl, err := template.ParseFiles("./ui/index.html")
 	if err != nil {
 		w.WriteHeader(500)
 		w.Write([]byte(fmt.Sprintf("cannot parse layout template: %v", err)))
