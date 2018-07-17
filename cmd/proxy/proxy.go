@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
@@ -15,8 +14,8 @@ import (
 
 func main() {
 	// Load environment variables.
-	port := os.Getenv("PORT")
-	network := os.Getenv("NETWORK")
+	port := 3001    // os.Getenv("PORT")
+	network := "f∅" // os.Getenv("NETWORK")
 	if network == "" {
 		log.Fatalf("cannot read network environment")
 	}

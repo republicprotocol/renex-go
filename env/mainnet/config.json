@@ -1,0 +1,23 @@
+{
+    "network": "nightly",
+    "ingress": "",
+    "infura": "https://mainnet.infura.io",
+    "etherscan": "https://etherscan.io",
+    "ethNetwork": "mainnet",
+    "ethNetworkLabel": "Main",
+    "ledgerNetworkId": "1",
+    "contracts": [
+        {
+            "darknodeRegistry": "",
+            "orderbook": "",
+            "renExBalances": "",
+            "renExSettlement": ""
+        }
+    ],
+    "tokens": {
+        "DGX": "",
+        "REN": "",
+        "ABC": "",
+        "XYZ": ""
+    }
+}
