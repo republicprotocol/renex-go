@@ -70,7 +70,12 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}) {
 		return
 	}
 
-	// TODO: Add validation for networkData (non-empty, etc.)
+	if len(networkData) == 0 {
+		w.WriteHeader(500)
+		w.Write([]byte("invalid data received"))
+		return
+	}
+
 	if tmpl, err = tmpl.Parse(`{{define "env"}}<script type="text/javascript">window.NETWORK=` + string(networkData) + `;</script>{{end}}`); err != nil {
 		w.WriteHeader(500)
 		w.Write([]byte(fmt.Sprintf("cannot execute template: %v", err)))

@@ -1,1 +1,1 @@
-web: proxy
+web: server

@@ -1,6 +1,6 @@
 [metadata.heroku]
-  root-package = "github.com/republicprotocol/darknode-proxy-go"
-  install = "./cmd/proxy"
+  root-package = "github.com/republicprotocol/renex-go"
+  install = "./cmd/server"
 
 [[constraint]]
   name = "github.com/gorilla/mux"
