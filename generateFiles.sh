@@ -1,15 +1,24 @@
 #!/bin/bash
 
+MODULES_FOLDER="modules"
+UI_FOLDER="ui"
+
 # Add modules
-rm -rf "./modules"
-git clone -b template git@github.com:republicprotocol/renex-js.git modules/renex-js
+if [ -d "$MODULES_FOLDER" ]; then
+    cd "$MODULES_FOLDER/renex-js"
+    git pull
+    cd ../..
+else
+    # TODO: Use `master` branch once merged
+    git clone -b template git@github.com:republicprotocol/renex-js.git modules/renex-js
+fi
 
 # Remove the old build folder
-rm -rf "./public"
+rm -rf $UI_FOLDER
 
 # Build UI
-cd ./modules/renex-js
+cd "$MODULES_FOLDER/renex-js"
 npm install
 npm run build
-mv build "../../public"
+mv build "../../$UI_FOLDER"
 cd ../..

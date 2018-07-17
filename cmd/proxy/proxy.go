@@ -14,6 +14,7 @@ import (
 
 func main() {
 	// Load environment variables.
+	// TODO: Uncomment environment variables before deploy
 	port := 3001    // os.Getenv("PORT")
 	network := "f∅" // os.Getenv("NETWORK")
 	if network == "" {
@@ -30,7 +31,7 @@ func main() {
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		serveTemplate(w, r, config)
 	})
-	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./public")))
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./ui")))
 	http.Handle("/", cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"},
 		AllowCredentials: true,
