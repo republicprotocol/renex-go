@@ -1,6 +1,6 @@
 {
     "network": "nightly",
-    "ingress": "https://ingress-api-nightly.herokuapp.com",
+    "ingress": "https://renex-ingress-nightly.herokuapp.com",
     "infura": "https://kovan.infura.io",
     "etherscan": "https://kovan.etherscan.io",
     "ethNetwork": "kovan",

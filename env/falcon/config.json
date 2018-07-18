@@ -1,6 +1,6 @@
 {
     "network": "falcon",
-    "ingress": "https://ingress-api-falcon.herokuapp.com",
+    "ingress": "https://renex-ingress-falcon.herokuapp.com",
     "infura": "https://kovan.infura.io",
     "etherscan": "https://kovan.etherscan.io",
     "ethNetwork": "kovan",
