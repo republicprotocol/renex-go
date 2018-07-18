@@ -5,7 +5,7 @@
     "etherscan": "https://kovan.etherscan.io",
     "ethNetwork": "kovan",
     "ethNetworkLabel": "Kovan",
-    "ledgerNetworkId": "42",
+    "ledgerNetworkId": 42,
     "contracts": [
         {
             "darknodeRegistry": "0x5d09eb34ce084bece690651f147dbd8ff41007bf",
