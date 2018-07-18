@@ -8,10 +8,10 @@
     "ledgerNetworkId": "42",
     "contracts": [
         {
-            "darknodeRegistry": "0xc735241f93f87d4dbea499ee6e1d41ec50e3d8ce",
-            "orderbook": "0x42c72b4090ed0627c85ed878f699b2db254beeca",
-            "renExBalances": "0x6268002a734edcde6c2111ae339e0d92b1ed2bfa",
-            "renExSettlement": "0xd42f9dd5e66627aa836b206edd76025b26a89dea"
+            "darknodeRegistry": "0xb3972e45d16b0942ed34943fdde413190cf5b12a",
+            "orderbook": "0x8356e57aa32547685149a859293ad83c144b800c",
+            "renExBalances": "0xc2c126e1eb32e6ad50c611fb92d009b4b4518b00",
+            "renExSettlement": "0x4e5ace5afa972366d637a9c387b8494c4129993a"
         }
     ],
     "tokens": {
