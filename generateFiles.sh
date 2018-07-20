@@ -6,8 +6,6 @@ UI_FOLDER="ui"
 if [ "$1" != "--branch" ] || [ "$2" = "" ]; then
     echo "Please specify a branch to build using the --branch flag"
     exit 1
-else
-    echo "--branch is specified"
 fi
 
 BRANCH=$2
