@@ -1,0 +1,23 @@
+{
+  "main.css": "static/css/main.65409409.css",
+  "main.css.map": "static/css/main.65409409.css.map",
+  "main.js": "static/js/main.31d5cd81.js",
+  "main.js.map": "static/js/main.31d5cd81.js.map",
+  "static/media/abc.svg": "static/media/abc.0ebf31e4.svg",
+  "static/media/btc.svg": "static/media/btc.d7876d48.svg",
+  "static/media/dgx.png": "static/media/dgx.cc08232d.png",
+  "static/media/eth.svg": "static/media/eth.80cc915b.svg",
+  "static/media/info.svg": "static/media/info.0dae5eb2.svg",
+  "static/media/key.svg": "static/media/key.58a9ecbe.svg",
+  "static/media/keystore.jpeg": "static/media/keystore.f1369e04.jpeg",
+  "static/media/keystore.svg": "static/media/keystore.688b3d2d.svg",
+  "static/media/ledger.jpg": "static/media/ledger.155b6114.jpg",
+  "static/media/ledger.svg": "static/media/ledger.a0672f36.svg",
+  "static/media/logo.svg": "static/media/logo.91aa6985.svg",
+  "static/media/metamask.jpg": "static/media/metamask.bfac34e8.jpg",
+  "static/media/metamask.svg": "static/media/metamask.d44c43c8.svg",
+  "static/media/ren.svg": "static/media/ren.a6553c2a.svg",
+  "static/media/trezor.svg": "static/media/trezor.70757b1d.svg",
+  "static/media/warning.svg": "static/media/warning.ed733238.svg",
+  "static/media/xyz.svg": "static/media/xyz.45cdf865.svg"
+}
