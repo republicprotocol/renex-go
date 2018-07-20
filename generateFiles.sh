@@ -9,8 +9,7 @@ if [ -d "$MODULE_FOLDER" ]; then
     git pull
     cd ../..
 else
-    # TODO: Use `master` branch once merged
-    git clone -b template https://github.com/republicprotocol/renex-js.git modules/renex-js
+    git clone https://github.com/republicprotocol/renex-js.git modules/renex-js
 fi
 
 # Remove the old build folder
