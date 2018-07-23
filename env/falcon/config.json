@@ -11,7 +11,7 @@
             "darknodeRegistry": "0xfafd5c83d1e21763b79418c4ecb5d62b4970df8e",
             "orderbook": "0x044b08eec761c39ac32aee1d6ef0583812f21699",
             "renExBalances": "0x3083e5ba36c6b42ca93c22c803013a4539eedc7f",
-            "renExSettlement": "0x3b6bcd5770e4cc7d687a8e7f2e2f46ffe2c29b36"
+            "renExSettlement": "0x8617dcd709bb8660602ef70ade78626b7408a210"
         }
     ],
     "tokens": {
