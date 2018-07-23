@@ -22,6 +22,11 @@ func main() {
 		log.Fatalf("cannot read network environment")
 	}
 
+	latestCommit, err := ioutil.ReadFile("env/latest_commit.txt")
+	if err != nil {
+		log.Fatalf("cannot read latest commit: %v", err)
+	}
+
 	// Load configuration file based on specified network environment.
 	config, err := loadConfig(fmt.Sprintf("env/%v/config.json", network))
 	if err != nil {
@@ -36,7 +41,7 @@ func main() {
 			http.FileServer(http.Dir("./ui")).ServeHTTP(w, r)
 		} else {
 			// A file does not exist so serve the UI template.
-			serveTemplate(w, r, config)
+			serveTemplate(w, r, config, latestCommit)
 		}
 	})
 
@@ -62,7 +67,7 @@ func loadConfig(configFile string) (interface{}, error) {
 	return data, nil
 }
 
-func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}) {
+func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, latestCommit []byte) {
 	networkData, err := json.Marshal(config)
 	if err != nil {
 		w.WriteHeader(500)
@@ -87,6 +92,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}) {
 	if tmpl, err = tmpl.Parse(`
 	{{define "env"}}
 	<script type="text/javascript">
+		console.log('renex-js commit hash: ` + string(latestCommit) + `');
 		window.NETWORK=` + string(networkData) + `;
 		if (window.NETWORK.ethNetwork !== 'mainnet') {
 			document.title = 'RenEx (' + window.NETWORK.ethNetworkLabel + ' Test Network)';

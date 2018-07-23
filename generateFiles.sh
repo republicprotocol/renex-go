@@ -17,8 +17,15 @@ if [ -d $MODULE_FOLDER ]; then
     git pull origin $BRANCH
     cd ../..
 else
-    git clone -b $BRANCH https://github.com/republicprotocol/renex-js.git modules/renex-js
+    git clone -b $BRANCH git@github.com:republicprotocol/renex-js.git "$MODULE_FOLDER"
 fi
+
+cd "$MODULE_FOLDER"
+LATEST_COMMIT="`git rev-parse HEAD`"
+cd ../..
+
+echo -n "$LATEST_COMMIT" > env/latest_commit.txt
+
 
 # Remove the old build folder
 rm -rf $UI_FOLDER
