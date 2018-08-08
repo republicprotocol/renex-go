@@ -12,21 +12,21 @@
             "orderbook": "0xa7caa4780a39d8b8acd6a0bdfb5b906210bc76cd",
             "renExBalances": "0xc5b98949AB0dfa0A7d4c07Bb29B002D6d6DA3e25",
             "renExSettlement": "0xc4f1420de7efbd76e973fe8c99294fe482819f9a",
-            "atomicInfo": "0x460ec601e1126917a54f65455d4ac51f68716adf"
+            "atomicInfo": "0x58a63bb3f707d3b8966b8436e75f29bd2e195ade"
         },
         {
             "darknodeRegistry": "0x5d09eb34ce084bece690651f147dbd8ff41007bf",
             "orderbook": "0xB01219Cf49e92ffcd48fecC96241dBd1372B8Bb1",
             "renExBalances": "0xc5b98949AB0dfa0A7d4c07Bb29B002D6d6DA3e25",
             "renExSettlement": "0xc53abbc5713e606a86533088707e80fcae33eff8",
-            "atomicInfo": "0x460ec601e1126917a54f65455d4ac51f68716adf"
+            "atomicInfo": "0x58a63bb3f707d3b8966b8436e75f29bd2e195ade"
         },
         {
             "darknodeRegistry": "0xf7b4360983A8fdd3E2ffb2e46cBeC65fA1b3075E",
             "orderbook": "0x4782a0B10ad2EFEa1b488F53fDE2C25ceEd4a013",
             "renExBalances": "0xc5b98949AB0dfa0A7d4c07Bb29B002D6d6DA3e25",
             "renExSettlement": "0xd88C4f5162850B93c04EdEd90f7c552792c0B460",
-            "atomicInfo": "0x460ec601e1126917a54f65455d4ac51f68716adf"
+            "atomicInfo": "0x58a63bb3f707d3b8966b8436e75f29bd2e195ade"
         }
     ],
     "tokens": {
