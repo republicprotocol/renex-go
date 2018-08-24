@@ -12,7 +12,7 @@
             "orderbook": "0xa7caa4780a39d8b8acd6a0bdfb5b906210bc76cd",
             "renExBalances": "0xc5b98949AB0dfa0A7d4c07Bb29B002D6d6DA3e25",
             "renExSettlement": "0xfa0938e3c9a5e33b5084dfbffaca9241aef39be8",
-            "atomicInfo": "0x58a63bb3f707d3b8966b8436e75f29bd2e195ade"
+            "renExAtomicInfo": "0xCf85e1Ee45df67Bc9a65B9707a24b64Ac3174259"
         },
         {
             "darknodeRegistry": "0x372b6204263c6867f81e2a9e11057ff43efea14b",
