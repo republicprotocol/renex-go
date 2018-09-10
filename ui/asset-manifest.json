@@ -1,13 +1,8 @@
 {
   "main.css": "static/css/main.ca3a1e11.css",
   "main.css.map": "static/css/main.ca3a1e11.css.map",
-<<<<<<< HEAD
-  "main.js": "static/js/main.df852f9c.js",
-  "main.js.map": "static/js/main.df852f9c.js.map",
-=======
-  "main.js": "static/js/main.870b3ab4.js",
-  "main.js.map": "static/js/main.870b3ab4.js.map",
->>>>>>> 73ac5d4fa841cd3a312d50d35d7c298721ec5fc4
+  "main.js": "static/js/main.23ce4163.js",
+  "main.js.map": "static/js/main.23ce4163.js.map",
   "static/media/abc.svg": "static/media/abc.0ebf31e4.svg",
   "static/media/btc.svg": "static/media/btc.d7876d48.svg",
   "static/media/dgx.png": "static/media/dgx.cc08232d.png",
