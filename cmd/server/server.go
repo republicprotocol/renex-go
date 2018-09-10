@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"strings"
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
@@ -93,7 +94,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, l
 	if tmpl, err = tmpl.Parse(`
 	{{define "env"}}
 	<script type="text/javascript">
-		console.log('renex-js commit hash: ` + string(latestCommit) + `');
+		console.log('renex-js commit hash: ` + strings.TrimSpace(string(latestCommit)) + `');
 		window.INFURA_KEY="` + infuraKey + `";
 		window.NETWORK=` + string(networkData) + `;
 		if (window.NETWORK.ethNetwork !== 'mainnet') {
