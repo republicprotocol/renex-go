@@ -9,7 +9,7 @@
     "contracts": [{
         "darknodeRegistry": "0xd1C3b5f2Fe4eEC6C262a5E1b161E5E099FD8325E",
         "orderbook": "0x9a016649d97D44A055c26CBCADBC45A1ac563c89",
-        "renExTokens": "0x92702879dC258860111782Cc983e4edfE11450cC",
+        "renExTokens": "0x0649b5dfca237d67e72508333616e4cd330c6f89",
         "renExBalances": "0x99df4a01731b876a6b43a9a6873d080c29992d63",
         "renExSettlement": "0x68FE2088A321A42DE11Aba93D32C81C9f20b1Abe",
         "renExAtomicInfo": "0xD5757DB061B1aDD0dCBf6B9dD3849E98eAEF408a"
