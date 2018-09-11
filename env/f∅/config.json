@@ -6,16 +6,14 @@
     "ethNetwork": "kovan",
     "ethNetworkLabel": "Kovan",
     "ledgerNetworkId": 42,
-    "contracts": [
-        {
-            "darknodeRegistry": "0xd1C3b5f2Fe4eEC6C262a5E1b161E5E099FD8325E",
-            "orderbook": "0x9a016649d97D44A055c26CBCADBC45A1ac563c89",
-            "renExTokens": "0x92702879dC258860111782Cc983e4edfE11450cC",
-            "renExBalances": "0x2D08A401F347624095dBD9b9EC111634d129F595",
-            "renExSettlement": "0x68FE2088A321A42DE11Aba93D32C81C9f20b1Abe",
-            "renExAtomicInfo": "0xD5757DB061B1aDD0dCBf6B9dD3849E98eAEF408a"
-        }
-    ],
+    "contracts": [{
+        "darknodeRegistry": "0xd1C3b5f2Fe4eEC6C262a5E1b161E5E099FD8325E",
+        "orderbook": "0x9a016649d97D44A055c26CBCADBC45A1ac563c89",
+        "renExTokens": "0x92702879dC258860111782Cc983e4edfE11450cC",
+        "renExBalances": "0x99df4a01731b876a6b43a9a6873d080c29992d63",
+        "renExSettlement": "0x68FE2088A321A42DE11Aba93D32C81C9f20b1Abe",
+        "renExAtomicInfo": "0xD5757DB061B1aDD0dCBf6B9dD3849E98eAEF408a"
+    }],
     "tokens": {
         "ABC": "0x48eC1D153f97a94140d2ECF0bC836bc6ED2f39d7",
         "DGX": "0x842F0Db4943174EC458b790868e330444c18c9F2",
