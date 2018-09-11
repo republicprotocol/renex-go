@@ -8,32 +8,12 @@
     "ledgerNetworkId": 42,
     "contracts": [
         {
-            "darknodeRegistry": "0x372b6204263c6867f81e2a9e11057ff43efea14b",
-            "orderbook": "0xa7caa4780a39d8b8acd6a0bdfb5b906210bc76cd",
-            "renExBalances": "0xc5b98949AB0dfa0A7d4c07Bb29B002D6d6DA3e25",
-            "renExSettlement": "0xfa0938e3c9a5e33b5084dfbffaca9241aef39be8",
-            "renExAtomicInfo": "0xCf85e1Ee45df67Bc9a65B9707a24b64Ac3174259"
-        },
-        {
-            "darknodeRegistry": "0x372b6204263c6867f81e2a9e11057ff43efea14b",
-            "orderbook": "0xa7caa4780a39d8b8acd6a0bdfb5b906210bc76cd",
-            "renExBalances": "0xc5b98949AB0dfa0A7d4c07Bb29B002D6d6DA3e25",
-            "renExSettlement": "0xc4f1420de7efbd76e973fe8c99294fe482819f9a",
-            "atomicInfo": "0x58a63bb3f707d3b8966b8436e75f29bd2e195ade"
-        },
-        {
-            "darknodeRegistry": "0x5d09eb34ce084bece690651f147dbd8ff41007bf",
-            "orderbook": "0xB01219Cf49e92ffcd48fecC96241dBd1372B8Bb1",
-            "renExBalances": "0xc5b98949AB0dfa0A7d4c07Bb29B002D6d6DA3e25",
-            "renExSettlement": "0xc53abbc5713e606a86533088707e80fcae33eff8",
-            "atomicInfo": "0x58a63bb3f707d3b8966b8436e75f29bd2e195ade"
-        },
-        {
-            "darknodeRegistry": "0xf7b4360983A8fdd3E2ffb2e46cBeC65fA1b3075E",
-            "orderbook": "0x4782a0B10ad2EFEa1b488F53fDE2C25ceEd4a013",
-            "renExBalances": "0xc5b98949AB0dfa0A7d4c07Bb29B002D6d6DA3e25",
-            "renExSettlement": "0xd88C4f5162850B93c04EdEd90f7c552792c0B460",
-            "atomicInfo": "0x58a63bb3f707d3b8966b8436e75f29bd2e195ade"
+            "darknodeRegistry": "0xd1C3b5f2Fe4eEC6C262a5E1b161E5E099FD8325E",
+            "orderbook": "0x9a016649d97D44A055c26CBCADBC45A1ac563c89",
+            "renExTokens": "0x92702879dC258860111782Cc983e4edfE11450cC",
+            "renExBalances": "0x2D08A401F347624095dBD9b9EC111634d129F595",
+            "renExSettlement": "0x68FE2088A321A42DE11Aba93D32C81C9f20b1Abe",
+            "renExAtomicInfo": "0xD5757DB061B1aDD0dCBf6B9dD3849E98eAEF408a"
         }
     ],
     "tokens": {
