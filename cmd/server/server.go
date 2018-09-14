@@ -14,6 +14,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
+	"golang.org/x/time/rate"
 )
 
 type authRequest struct {
@@ -57,9 +58,9 @@ func main() {
 	}
 
 	r := mux.NewRouter().StrictSlash(true)
-
+	limiter := rate.NewLimiter(3, 20)
 	kyber := &kyber{secret: kyberSecret}
-	r.PathPrefix("/kyber").HandlerFunc(kyber.httpHandler)
+	r.PathPrefix("/kyber").HandlerFunc(rateLimit(limiter, kyber.httpHandler))
 	r.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		fullPath := path.Join("./ui/", r.URL.Path)
 		if stat, err := os.Stat(fullPath); err == nil && !stat.IsDir() {
@@ -149,6 +150,17 @@ func (kyber *kyber) httpHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 	w.Write(userBytes)
+}
+
+func rateLimit(limiter *rate.Limiter, next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		if limiter.Allow() {
+			next.ServeHTTP(w, r)
+			return
+		}
+		w.WriteHeader(http.StatusTooManyRequests)
+		w.Write([]byte("too many requests"))
+	}
 }
 
 func loadConfig(configFile string) (interface{}, error) {
