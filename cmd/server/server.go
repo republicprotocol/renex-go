@@ -17,10 +17,18 @@ import (
 )
 
 type authRequest struct {
+	Type   string `json:"grant_type"`
 	Code   string `json:"code"`
 	URI    string `json:"redirect_uri"`
 	Key    string `json:"client_id"`
 	Secret string `json:"client_secret"`
+}
+
+type tokenResponse struct {
+	Type         string `json:"token_type"`
+	AccessToken  string `json:"access_token"`
+	Expiry       int    `json:"expires_in"`
+	RefreshToken string `json:"refresh_token"`
 }
 
 func main() {
@@ -45,18 +53,8 @@ func main() {
 	}
 
 	r := mux.NewRouter().StrictSlash(true)
-	r.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		fullPath := path.Join("./ui/", r.URL.Path)
-		if stat, err := os.Stat(fullPath); err == nil && !stat.IsDir() {
-			// A file exists so serve it statically.
-			http.FileServer(http.Dir("./ui")).ServeHTTP(w, r)
-		} else {
-			// A file does not exist so serve the UI template.
-			serveTemplate(w, r, config, latestCommit, infuraKey)
-		}
-	})
 
-	r.HandleFunc("/kyber", func(w http.ResponseWriter, r *http.Request) {
+	r.PathPrefix("/kyber").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Decode POST request data.
 		decoder := json.NewDecoder(r.Body)
 		var data authRequest
@@ -78,27 +76,59 @@ func main() {
 
 		// Forward updated request data to Kyber.
 		url := "https://kyber.network/oauth/token"
-		request, err := http.NewRequest("POST", url, bytes.NewBuffer(byteArray))
-		request.Header.Set("Content-Type", "application/json")
+		postRequest, err := http.NewRequest("POST", url, bytes.NewBuffer(byteArray))
+		postRequest.Header.Set("Content-Type", "application/json")
 
 		client := &http.Client{}
-		resp, err := client.Do(request)
+		resp, err := client.Do(postRequest)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte(fmt.Sprintf("unable to forward request: %v", err)))
 			return
 		}
 		defer resp.Body.Close()
-
-		w.WriteHeader(http.StatusOK)
 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte(fmt.Sprintf("unable to read kyber response: %v", err)))
 			return
 		}
-		w.Write(bodyBytes)
-	}).Methods("POST")
+
+		var tokenResp tokenResponse
+		if err := json.Unmarshal(bodyBytes, &tokenResp); err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(fmt.Sprintf("unable to read kyber response: %v", err)))
+			return
+		}
+
+		userResp, err := http.Get("https://kyber.network/api/user_info?access_token=" + tokenResp.AccessToken)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(fmt.Sprintf("unable to retrieve user info: %v", err)))
+			return
+		}
+		defer userResp.Body.Close()
+		userBytes, err := ioutil.ReadAll(userResp.Body)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(fmt.Sprintf("unable to read kyber response: %v", err)))
+			return
+		}
+
+		w.WriteHeader(http.StatusOK)
+		w.Write(userBytes)
+	})
+
+	r.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		fullPath := path.Join("./ui/", r.URL.Path)
+		if stat, err := os.Stat(fullPath); err == nil && !stat.IsDir() {
+			// A file exists so serve it statically.
+			http.FileServer(http.Dir("./ui")).ServeHTTP(w, r)
+		} else {
+			// A file does not exist so serve the UI template.
+			serveTemplate(w, r, config, latestCommit, infuraKey)
+		}
+	})
 
 	http.Handle("/", cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"},
