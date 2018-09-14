@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"html/template"
@@ -15,11 +16,19 @@ import (
 	"github.com/rs/cors"
 )
 
+type authRequest struct {
+	Code   string `json:"code"`
+	URI    string `json:"redirect_uri"`
+	Key    string `json:"client_id"`
+	Secret string `json:"client_secret"`
+}
+
 func main() {
 	// Load environment variables.
 	port := os.Getenv("PORT")
 	network := os.Getenv("NETWORK")
 	infuraKey := os.Getenv("INFURA_KEY")
+	kyberSecret := os.Getenv("KYBER_SECRET")
 	if network == "" {
 		log.Fatalf("cannot read network environment")
 	}
@@ -47,10 +56,45 @@ func main() {
 		}
 	})
 
+	r.HandleFunc("/kyber", func(w http.ResponseWriter, r *http.Request) {
+		// Decode POST request data.
+		decoder := json.NewDecoder(r.Body)
+		var data authRequest
+		err := decoder.Decode(&data)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			w.Write([]byte(fmt.Sprintf("cannot decode data: %v", err)))
+			return
+		}
+
+		// Construct new request object with Kyber secret key.
+		data.Secret = kyberSecret
+		byteArray, err := json.Marshal(data)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			w.Write([]byte(fmt.Sprintf("cannot marshal data: %v", err)))
+			return
+		}
+
+		// Forward updated request data to Kyber.
+		url := "https://kyber.network/oauth/token"
+		request, err := http.NewRequest("POST", url, bytes.NewBuffer(byteArray))
+		request.Header.Set("Content-Type", "application/json")
+
+		client := &http.Client{}
+		resp, err := client.Do(request)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(fmt.Sprintf("unable to forward request: %v", err)))
+			return
+		}
+		defer resp.Body.Close()
+	}).Methods("POST")
+
 	http.Handle("/", cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"},
 		AllowCredentials: true,
-		AllowedMethods:   []string{"GET"},
+		AllowedMethods:   []string{"GET", "POST"},
 	}).Handler(r))
 
 	log.Printf("listening on port %v...", port)
