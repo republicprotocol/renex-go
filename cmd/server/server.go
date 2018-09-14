@@ -89,6 +89,15 @@ func main() {
 			return
 		}
 		defer resp.Body.Close()
+
+		w.WriteHeader(http.StatusOK)
+		bodyBytes, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(fmt.Sprintf("unable to read kyber response: %v", err)))
+			return
+		}
+		w.Write(bodyBytes)
 	}).Methods("POST")
 
 	http.Handle("/", cors.New(cors.Options{
