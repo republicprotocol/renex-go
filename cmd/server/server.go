@@ -98,7 +98,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, l
 		window.INFURA_KEY="` + infuraKey + `";
 		window.NETWORK=` + string(networkData) + `;
 		if (window.NETWORK.ethNetwork !== 'mainnet') {
-			document.title = 'RenEx (' + window.NETWORK.ethNetworkLabel + ' Test Network)';
+			document.title = 'RenEx Beta (' + window.NETWORK.ethNetworkLabel + ' Test Network)';
 		}
 	</script>
 	{{end}}
