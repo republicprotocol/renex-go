@@ -2,7 +2,6 @@
     "network": "nightly",
     "ingress": "",
     "infura": "https://mainnet.infura.io",
-    "renex": "",
     "etherscan": "https://etherscan.io",
     "ethNetwork": "mainnet",
     "ethNetworkLabel": "Main",
