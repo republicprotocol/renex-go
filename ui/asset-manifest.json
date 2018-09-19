@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.c6eff6fe.css",
-  "main.css.map": "static/css/main.c6eff6fe.css.map",
-  "main.js": "static/js/main.72f3a226.js",
-  "main.js.map": "static/js/main.72f3a226.js.map",
+  "main.css": "static/css/main.42dceeaf.css",
+  "main.css.map": "static/css/main.42dceeaf.css.map",
+  "main.js": "static/js/main.12a7e4fc.js",
+  "main.js.map": "static/js/main.12a7e4fc.js.map",
   "static/media/abc.svg": "static/media/abc.0ebf31e4.svg",
   "static/media/btc.svg": "static/media/btc.d7876d48.svg",
   "static/media/dgx.png": "static/media/dgx.cc08232d.png",
@@ -11,6 +11,7 @@
   "static/media/key.svg": "static/media/key.58a9ecbe.svg",
   "static/media/keystore.jpeg": "static/media/keystore.f1369e04.jpeg",
   "static/media/keystore.svg": "static/media/keystore.688b3d2d.svg",
+  "static/media/kyber.svg": "static/media/kyber.5ab48892.svg",
   "static/media/ledger.jpg": "static/media/ledger.155b6114.jpg",
   "static/media/ledger.svg": "static/media/ledger.a0672f36.svg",
   "static/media/logo.svg": "static/media/logo.91aa6985.svg",
@@ -30,5 +31,6 @@
   "static/media/sourcecodepro-regular.woff2": "static/media/sourcecodepro-regular.7dcc035e.woff2",
   "static/media/trezor.svg": "static/media/trezor.70757b1d.svg",
   "static/media/warning.svg": "static/media/warning.ed733238.svg",
+  "static/media/wyre.svg": "static/media/wyre.c0a7929f.svg",
   "static/media/xyz.svg": "static/media/xyz.45cdf865.svg"
 }

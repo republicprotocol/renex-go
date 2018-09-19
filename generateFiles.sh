@@ -32,7 +32,7 @@ rm -rf $UI_FOLDER
 
 # Build UI
 cd $MODULE_FOLDER
-npm install
+# npm install
 npm run build
 mv build ../../$UI_FOLDER
 cd ../..
