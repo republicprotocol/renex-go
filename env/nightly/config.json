@@ -13,7 +13,8 @@
             "renExTokens": "0x160ECA47935be4139eC5B94D99B678d6f7e18f95",
             "renExBalances": "0xa95dE870dDFB6188519D5CC63CEd5E0FBac1aa8E",
             "renExSettlement": "0x5f25233ca99104D31612D4fB937B090d5A2EbB75",
-            "renExAtomicInfo": "0xe1A660657A32053fe83B19B1177F6B56C6F37b1f"
+            "renExAtomicInfo": "0xe1A660657A32053fe83B19B1177F6B56C6F37b1f",
+            "wyre": "0xB14fA2276D8bD26713A6D98871b2d63Da9eefE6f"
         }
     ],
     "tokens": {
