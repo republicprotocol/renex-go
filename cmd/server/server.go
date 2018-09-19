@@ -20,6 +20,7 @@ func main() {
 	port := os.Getenv("PORT")
 	network := os.Getenv("NETWORK")
 	infuraKey := os.Getenv("INFURA_KEY")
+	sentryDSN := os.Getenv("SENTRY_DSN")
 	if network == "" {
 		log.Fatalf("cannot read network environment")
 	}
@@ -43,7 +44,7 @@ func main() {
 			http.FileServer(http.Dir("./ui")).ServeHTTP(w, r)
 		} else {
 			// A file does not exist so serve the UI template.
-			serveTemplate(w, r, config, latestCommit, infuraKey)
+			serveTemplate(w, r, config, latestCommit, infuraKey, sentryDSN)
 		}
 	})
 
@@ -69,7 +70,7 @@ func loadConfig(configFile string) (interface{}, error) {
 	return data, nil
 }
 
-func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, latestCommit []byte, infuraKey string) {
+func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, latestCommit []byte, infuraKey string, sentryDSN string) {
 	networkData, err := json.Marshal(config)
 	if err != nil {
 		w.WriteHeader(500)
@@ -95,6 +96,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, l
 	{{define "env"}}
 	<script type="text/javascript">
 		console.log('renex-js commit hash: ` + strings.TrimSpace(string(latestCommit)) + `');
+		window.SENTRY_DSN="` + sentryDSN + `";
 		window.INFURA_KEY="` + infuraKey + `";
 		window.NETWORK=` + string(networkData) + `;
 		if (window.NETWORK.ethNetwork !== 'mainnet') {
