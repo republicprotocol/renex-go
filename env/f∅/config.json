@@ -8,19 +8,19 @@
     "ledgerNetworkId": 42,
     "contracts": [
         {
-            "darknodeRegistry": "0xd1C3b5f2Fe4eEC6C262a5E1b161E5E099FD8325E",
-            "orderbook": "0x9a016649d97D44A055c26CBCADBC45A1ac563c89",
-            "renExTokens": "0x0649b5dfca237d67e72508333616e4cd330c6f89",
-            "renExBalances": "0x99df4a01731b876a6b43a9a6873d080c29992d63",
+            "darknodeRegistry": "0xf7daA0Baf257547A6Ad3CE7FFF71D55cb7426F76",
+            "orderbook": "0xA53Da4093c682a4259DE38302341BFEf7e9f7a4f",
+            "renExTokens": "0xedFF6E7C072fA0018720734F6d5a4f4DC30f9869",
+            "renExBalances": "0x99df4A01731B876A6b43A9A6873D080C29992D63",
             "renExSettlement": "0x68FE2088A321A42DE11Aba93D32C81C9f20b1Abe",
             "renExAtomicInfo": "0xD5757DB061B1aDD0dCBf6B9dD3849E98eAEF408a"
         }
     ],
     "tokens": {
-        "ABC": "0xfC42491547f1837e2D0F9A0E6b12b1d883fB8Bd0",
-        "DGX": "0x0798297a11cEFEF7479E40e67839fEe3c025691e",
-        "REN": "0x99806D107eda625516d954621dF175a002D223e6",
-        "PQR": "0x724c964a614Eb0748b48dF79eD5D93C108E361c4",
-        "XYZ": "0xC9382f7b2C683e08AaDe773EB97BcE4a0d6461A0"
+        "TUSD": "0xD09A65Fd6DF182dBf9cC853697eFA520369015E4",
+        "DGX": "0x7583D3019b078037B8607487cc4c161e19C50869",
+        "REN": "0x81793734c6Cf6961B5D0D2d8a30dD7DF1E1803f1",
+        "OMG": "0xb57b1105F41e6117F8a67170e1bd7Ec9149D7ced",
+        "ZRX": "0x932d170Cd254Db4c7321C6A89D7722714d82a69f"
     }
 }
