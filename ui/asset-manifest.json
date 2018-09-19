@@ -1,9 +1,8 @@
 {
   "main.css": "static/css/main.42dceeaf.css",
   "main.css.map": "static/css/main.42dceeaf.css.map",
-  "main.js": "static/js/main.5b0c9ff5.js",
-  "main.js.map": "static/js/main.5b0c9ff5.js.map",
-  "static/media/abc.svg": "static/media/abc.0ebf31e4.svg",
+  "main.js": "static/js/main.49f54f5d.js",
+  "main.js.map": "static/js/main.49f54f5d.js.map",
   "static/media/btc.svg": "static/media/btc.d7876d48.svg",
   "static/media/dgx.png": "static/media/dgx.cc08232d.png",
   "static/media/eth.svg": "static/media/eth.80cc915b.svg",
@@ -23,7 +22,6 @@
   "static/media/pingfangsc-medium.woff2": "static/media/pingfangsc-medium.a7414b72.woff2",
   "static/media/pingfangsc.woff": "static/media/pingfangsc.cbc9cb77.woff",
   "static/media/pingfangsc.woff2": "static/media/pingfangsc.1ee42df1.woff2",
-  "static/media/pqr.svg": "static/media/pqr.6efcc2db.svg",
   "static/media/ren.svg": "static/media/ren.a6553c2a.svg",
   "static/media/sourcecodepro-bold.woff": "static/media/sourcecodepro-bold.c5019c9e.woff",
   "static/media/sourcecodepro-bold.woff2": "static/media/sourcecodepro-bold.3a0faa5e.woff2",
@@ -31,6 +29,5 @@
   "static/media/sourcecodepro-regular.woff2": "static/media/sourcecodepro-regular.7dcc035e.woff2",
   "static/media/trezor.svg": "static/media/trezor.70757b1d.svg",
   "static/media/warning.svg": "static/media/warning.ed733238.svg",
-  "static/media/wyre.svg": "static/media/wyre.c0a7929f.svg",
-  "static/media/xyz.svg": "static/media/xyz.45cdf865.svg"
+  "static/media/wyre.svg": "static/media/wyre.c0a7929f.svg"
 }
