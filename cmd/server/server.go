@@ -19,6 +19,8 @@ func main() {
 	// Load environment variables.
 	port := os.Getenv("PORT")
 	network := os.Getenv("NETWORK")
+	kyberKey := os.Getenv("KYBER_KEY")
+	wyreKey := os.Getenv("WYRE_KEY")
 	infuraKey := os.Getenv("INFURA_KEY")
 	sentryDSN := os.Getenv("SENTRY_DSN")
 	if network == "" {
@@ -44,7 +46,7 @@ func main() {
 			http.FileServer(http.Dir("./ui")).ServeHTTP(w, r)
 		} else {
 			// A file does not exist so serve the UI template.
-			serveTemplate(w, r, config, latestCommit, infuraKey, sentryDSN)
+			serveTemplate(w, r, config, latestCommit, kyberKey, wyreKey, infuraKey, sentryDSN)
 		}
 	})
 
@@ -70,7 +72,7 @@ func loadConfig(configFile string) (interface{}, error) {
 	return data, nil
 }
 
-func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, latestCommit []byte, infuraKey string, sentryDSN string) {
+func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, latestCommit []byte, kyberKey, wyreKey, infuraKey, sentryDSN string) {
 	networkData, err := json.Marshal(config)
 	if err != nil {
 		w.WriteHeader(500)
@@ -96,8 +98,10 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, l
 	{{define "env"}}
 	<script type="text/javascript">
 		console.log('renex-js commit hash: ` + strings.TrimSpace(string(latestCommit)) + `');
-		window.SENTRY_DSN="` + sentryDSN + `";
+		window.KYBER_KEY="` + kyberKey + `";
+		window.WYRE_KEY="` + wyreKey + `";
 		window.INFURA_KEY="` + infuraKey + `";
+		window.SENTRY_DSN="` + sentryDSN + `";
 		window.NETWORK=` + string(networkData) + `;
 		if (window.NETWORK.ethNetwork !== 'mainnet') {
 			document.title = 'RenEx Beta (' + window.NETWORK.ethNetworkLabel + ' Test Network)';
