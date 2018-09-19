@@ -34,5 +34,5 @@ rm -rf $UI_FOLDER
 cd $MODULE_FOLDER
 # npm install
 npm run build
-mv build ../../$UI_FOLDER
 cd ../..
+mv $MODULE_FOLDER/build $UI_FOLDER
