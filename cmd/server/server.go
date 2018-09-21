@@ -103,7 +103,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, l
 		window.INFURA_KEY="` + infuraKey + `";
 		window.SENTRY_DSN="` + sentryDSN + `";
 		window.NETWORK=` + string(networkData) + `;
-		if (window.NETWORK.ethNetwork !== 'mainnet') {
+		if (window.NETWORK.ethNetwork !== 'main') {
 			document.title = 'RenEx Beta (' + window.NETWORK.ethNetworkLabel + ' Test Network)';
 		}
 	</script>
