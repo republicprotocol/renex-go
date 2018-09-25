@@ -6,14 +6,16 @@
     "ethNetwork": "main",
     "ethNetworkLabel": "Main",
     "ledgerNetworkId": 1,
-    "contracts": [{
-        "darknodeRegistry": "0x3799006a87fde3ccfc7666b3e6553b03ed341c2f",
-        "orderbook": "0x6b8bb175c092de7d81860b18db360b734a2598e0",
-        "renExTokens": "0x7cade4fbc8761817bb62a080733d1b6cad744ec4",
-        "renExBalances": "0x9636f9ac371ca0965b7c2b4ad13c4cc64d0ff2dc",
-        "renExSettlement": "0x908262de0366e42d029b0518d5276762c92b21e1",
-        "wyre": "0x9f2a7b5e6280727cd6c8486f5f96e5f76164f2df"
-    }],
+    "contracts": [
+        {
+            "darknodeRegistry": "0x3799006a87fde3ccfc7666b3e6553b03ed341c2f",
+            "orderbook": "0x6b8bb175c092de7d81860b18db360b734a2598e0",
+            "renExTokens": "0x7cade4fbc8761817bb62a080733d1b6cad744ec4",
+            "renExBalances": "0x5ec18b477b20af940807b5478db5a64cd4a77efd",
+            "renExSettlement": "0x908262de0366e42d029b0518d5276762c92b21e1",
+            "wyre": "0x9f2a7b5e6280727cd6c8486f5f96e5f76164f2df"
+        }
+    ],
     "tokens": {
         "TUSD": "0x8dd5fbCe2F6a956C3022bA3663759011Dd51e73E",
         "DGX": "0x4f3AfEC4E5a3F2A6a1A411DEF7D7dFe50eE057bF",
