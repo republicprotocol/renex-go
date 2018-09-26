@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Print commands as they are executed
+set -x
+
+# Exit if any command fails
+set -e
+
 BASE_FOLDER=$(pwd)
 
 RENEX_MODULE_FOLDER="$BASE_FOLDER/modules/renex-js"
