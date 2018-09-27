@@ -22,6 +22,8 @@ BRANCH=$2
 # Add modules
 if [ -d $RENEX_MODULE_FOLDER ]; then
     cd $RENEX_MODULE_FOLDER
+    # `npm install` may changes these files
+    git checkout package.json package-lock.json
     git checkout $BRANCH
     git pull origin $BRANCH
     cd $BASE_FOLDER
@@ -30,6 +32,8 @@ else
 fi
 if [ -d $SDK_MODULE_FOLDER ]; then
     cd $SDK_MODULE_FOLDER
+    # `npm install` may changes these files
+    git checkout package.json package-lock.json
     git checkout $BRANCH
     git pull origin $BRANCH
     cd $BASE_FOLDER
