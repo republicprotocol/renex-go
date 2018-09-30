@@ -142,7 +142,7 @@ set -x
 git commit -m "ui: built ${COMBINED_HASH}" --no-verify
 
 git push
-git push "${NETWORK}" master
+git push "${BRANCH}" master
 
 set +x
 
