@@ -51,6 +51,8 @@ else
     exit 1
 fi
 
+HEROKU_APP="renex-ui-$NETWORK"
+
 echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:${BRANCH}${RESET} to ${COLOR}${NETWORK}${RESET}...\n\n"
 
 # Print commands as they are executed
@@ -142,7 +144,14 @@ set -x
 git commit -m "ui: built ${COMBINED_HASH}" --no-verify
 
 git push
-git push "${BRANCH}" master
+
+# Push to Heroku
+if [ -z "$(git config remote.heroku-${NETWORK}.url)" ]; then
+    heroku git:remote -a ${HEROKU_APP}
+    git remote rename heroku heroku-${NETWORK}
+fi
+
+git push "heroku-${NETWORK}" master
 
 set +x
 
