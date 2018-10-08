@@ -140,8 +140,8 @@ fi
 
 set -x
 
+git add .
 git commit -m "ui: built ${COMBINED_HASH}" --no-verify
-
 git push
 
 # Push to Heroku
