@@ -49,7 +49,7 @@ elif [ "$NETWORK" == "nightly" ] && [ "$BRANCH" == "" ]; then
     COLOR="${CYAN}"
 elif [ "$BRANCH" != "" ]; then
     COLOR="${CYAN}"
-    heroku apps:create HEROKU_APP
+    heroku apps:create $HEROKU_APP
 fi
 
 echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:${BRANCH}${RESET} to ${COLOR}${NETWORK}${RESET}...\n\n"
