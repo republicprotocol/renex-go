@@ -140,8 +140,10 @@ fi
 
 set -x
 
-git commit -m "ui: built ${COMBINED_HASH}" --no-verify
-git push
+if ! git diff-index --quiet HEAD --; then
+    git commit -m "ui: built ${COMBINED_HASH}" --no-verify
+    git push
+fi
 
 # Push to Heroku
 if [ -z "$(git config remote.heroku-${NETWORK}.url)" ]; then
