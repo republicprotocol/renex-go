@@ -140,7 +140,7 @@ fi
 
 set -x
 
-if ! git diff-index --quiet HEAD --; then
+if [ -z "$(git status -uno --porcelain)" ]; then
     git commit -m "ui: built ${COMBINED_HASH}" --no-verify
     git push
 fi
