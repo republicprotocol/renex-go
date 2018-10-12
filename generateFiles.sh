@@ -53,7 +53,7 @@ fi
 
 HEROKU_APP="renex-ui-$NETWORK"
 
-echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:${BRANCH}${RESET} to ${COLOR}${NETWORK}${RESET}...\n\n"
+echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:${BRANCH}${RESET} to ${COLOR}${NETWORK}${RESET}...\n"
 
 # Print commands as they are executed
 set -x
@@ -141,7 +141,7 @@ fi
 
 set -x
 
-git commit -m "ui: built ${COMBINED_HASH}" --no-verify
+git commit -m "ui: built ${COMBINED_HASH}" --no-verify || true
 
 git push
 
