@@ -12,6 +12,7 @@ import (
 	"strings"
 
 	"github.com/gorilla/mux"
+	"github.com/republicprotocol/renex-go/contract"
 	"github.com/rs/cors"
 )
 
@@ -62,12 +63,12 @@ func main() {
 	}
 }
 
-func loadConfig(configFile string) (interface{}, error) {
+func loadConfig(configFile string) (contract.Config, error) {
 	file, err := ioutil.ReadFile(configFile)
 	if err != nil {
-		return nil, err
+		return contract.Config{}, err
 	}
-	var data interface{}
+	var data contract.Config
 	json.Unmarshal(file, &data)
 	return data, nil
 }

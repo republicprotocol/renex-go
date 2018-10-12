@@ -18,40 +18,39 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 
 usage() {
-    echo "Please specify a network to deploy using the --network flag"
+    echo "Please specify a network to deploy using -n"
     echo ""
     echo -e "  Available networks: ${BLUE}mainnet${RESET}, ${PURPLE}testnet${RESET}, ${CYAN}nightly${RESET}"
     echo ""
     exit 1
 }
 
-if [ "$1" != "--network" ] || [ "$2" = "" ]; then
-    usage
-fi
-
-NETWORK=$2
-
+# Handle arguments
 NOVERIFY=false
-if [ "$3" == "--no-verify" ]; then
-    NOVERIFY=true
-fi
-
-
-if [ "$NETWORK" == "mainnet" ]; then
-    BRANCH="master"
-    COLOR="${BLUE}"
-elif [ "$NETWORK" == "testnet" ]; then
-    BRANCH="develop"
-    COLOR="${PURPLE}"
-elif [ "$NETWORK" == "nightly" ]; then
-    BRANCH="nightly"
-    COLOR="${CYAN}"
-else
-    usage
-    exit 1
-fi
+while getopts 'n:b::v' flag; do
+  case "${flag}" in
+    n) NETWORK=${OPTARG} ;;
+    b) BRANCH=${OPTARG} ;;
+    v) NOVERIFY=true ;;
+    *) usage ;;
+  esac
+done
 
 HEROKU_APP="renex-ui-$NETWORK"
+
+if [ "$NETWORK" == "mainnet" ] && [ "$BRANCH" == "" ]; then
+    BRANCH="master"
+    COLOR="${BLUE}"
+elif [ "$NETWORK" == "testnet" ] && [ "$BRANCH" == "" ]; then
+    BRANCH="develop"
+    COLOR="${PURPLE}"
+elif [ "$NETWORK" == "nightly" ] && [ "$BRANCH" == "" ]; then
+    BRANCH="nightly"
+    COLOR="${CYAN}"
+elif [ "$BRANCH" != "" ]; then
+    COLOR="${CYAN}"
+    heroku apps:create $HEROKU_APP
+fi
 
 echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:${BRANCH}${RESET} to ${COLOR}${NETWORK}${RESET}...\n"
 
@@ -141,9 +140,10 @@ fi
 
 set -x
 
-git commit -m "ui: built ${COMBINED_HASH}" --no-verify || true
-
-git push
+if [ -z "$(git status -uno --porcelain)" ]; then
+    git commit -m "ui: built ${COMBINED_HASH}" --no-verify
+    git push
+fi
 
 # Push to Heroku
 if [ -z "$(git config remote.heroku-${NETWORK}.url)" ]; then
