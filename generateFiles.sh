@@ -50,6 +50,9 @@ elif [ "$NETWORK" == "nightly" ] && [ "$BRANCH" == "" ]; then
 elif [ "$BRANCH" != "" ]; then
     COLOR="${CYAN}"
     heroku apps:create $HEROKU_APP
+else
+    usage
+    exit 1
 fi
 
 echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:${BRANCH}${RESET} to ${COLOR}${NETWORK}${RESET}...\n"
@@ -140,7 +143,7 @@ fi
 
 set -x
 
-if [ -z "$(git status -uno --porcelain)" ]; then
+if [ -n "$(git status -uno --porcelain)" ]; then
     git commit -m "ui: built ${COMBINED_HASH}" --no-verify
     git push
 fi

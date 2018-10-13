@@ -1,15 +1,15 @@
 package contract
 
 type Config struct {
-	Network         string `json:"network"`
-	Ingress         string `json:"ingress"`
-	Infura          string `json:"infura"`
-	Etherscan       string `json:"etherscan"`
-	EthNetwork      string `json:"ethNetwork"`
-	EthNetworkLabel string `json:"ethNetworkLabel"`
-	LedgerNetworkID string `json:"ledgerNetworkId"`
-	Contracts       []ConfigContracts
-	Tokens          ConfigTokens
+	Network         string            `json:"network"`
+	Ingress         string            `json:"ingress"`
+	Infura          string            `json:"infura"`
+	Etherscan       string            `json:"etherscan"`
+	EthNetwork      string            `json:"ethNetwork"`
+	EthNetworkLabel string            `json:"ethNetworkLabel"`
+	LedgerNetworkID string            `json:"ledgerNetworkId"`
+	Contracts       []ConfigContracts `json:"contracts"`
+	Tokens          ConfigTokens      `json:"tokens"`
 }
 
 type ConfigContracts struct {
