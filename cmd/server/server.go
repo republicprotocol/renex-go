@@ -74,13 +74,13 @@ func loadConfig(configFile string) (contract.Config, error) {
 	return data, nil
 }
 
-func serveTemplate(w http.ResponseWriter, r *http.Request, config []byte, latestCommit []byte, kyberKey, wyreKey, infuraKey, sentryDSN string) {
-	networkData, err := json.Marshal(config)
-	if err != nil {
-		w.WriteHeader(500)
-		w.Write([]byte("cannot marshal network data: " + err.Error()))
-		return
-	}
+func serveTemplate(w http.ResponseWriter, r *http.Request, networkData []byte, latestCommit []byte, kyberKey, wyreKey, infuraKey, sentryDSN string) {
+	// networkData, err := json.Marshal(config)
+	// if err != nil {
+	// 	w.WriteHeader(500)
+	// 	w.Write([]byte("cannot marshal network data: " + err.Error()))
+	// 	return
+	// }
 
 	// Create template file and insert environment variables.
 	tmpl, err := template.ParseFiles("./ui/index.html")
