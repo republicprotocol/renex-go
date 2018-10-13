@@ -34,7 +34,8 @@ func main() {
 	}
 
 	// Load configuration file based on specified network environment.
-	config, err := loadConfig(fmt.Sprintf("env/%v/config.json", network))
+	// config, err := loadConfig(fmt.Sprintf("env/%v/config.json", network))
+	config, err := ioutil.ReadFile(fmt.Sprintf("env/%v/config.json", network))
 	if err != nil {
 		log.Fatalf("cannot load config: %v", err)
 	}
@@ -73,7 +74,7 @@ func loadConfig(configFile string) (contract.Config, error) {
 	return data, nil
 }
 
-func serveTemplate(w http.ResponseWriter, r *http.Request, config interface{}, latestCommit []byte, kyberKey, wyreKey, infuraKey, sentryDSN string) {
+func serveTemplate(w http.ResponseWriter, r *http.Request, config []byte, latestCommit []byte, kyberKey, wyreKey, infuraKey, sentryDSN string) {
 	networkData, err := json.Marshal(config)
 	if err != nil {
 		w.WriteHeader(500)
