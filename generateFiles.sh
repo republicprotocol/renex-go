@@ -143,7 +143,7 @@ fi
 
 set -x
 
-if [ -n "$(git status -uno --porcelain)" ]; then
+if [ -z "$(git diff --cached)" ]; then
     git commit -m "ui: built ${COMBINED_HASH}" --no-verify
     git push
 fi
