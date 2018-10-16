@@ -116,8 +116,6 @@ npm run build
 cd $BASE_FOLDER
 mv $RENEX_MODULE_FOLDER/build $UI_FOLDER
 
-git add ui env/latest_commit.txt
-
 set +x
 
 echo -en "\n\n\n"
@@ -143,8 +141,15 @@ fi
 
 set -x
 
+git add ui env/latest_commit.txt
 if [ "$(git diff --cached)" ]; then
     git commit -m "ui: built ${COMBINED_HASH}" --no-verify
+    git push
+fi
+
+git add env
+if [ "$(git diff --cached)" ]; then
+    git commit -m "env: added '${NETWORK}' config" --no-verify
     git push
 fi
 
