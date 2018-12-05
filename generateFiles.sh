@@ -163,4 +163,4 @@ git push "heroku-${NETWORK}" master
 
 set +x
 
-echo -e "\nPushed to ${COLOR}${NETWORK}${RESET}\n"
+echo -e "\nPushed ${COMBINED_HASH} to ${COLOR}${NETWORK}${RESET}\n"
