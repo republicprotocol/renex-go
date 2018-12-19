@@ -55,7 +55,7 @@ else
     exit 1
 fi
 
-echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:$BRANCH${RESET} to ${COLOR}${NETWORK}${RESET}...\n"
+echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:legacy${RESET} to ${COLOR}${NETWORK}${RESET}...\n"
 
 # Print commands as they are executed
 set -x
@@ -75,11 +75,11 @@ if [ -d $SDK_MODULE_FOLDER ]; then
     cd $SDK_MODULE_FOLDER
     # `npm install` may changes these files
     git checkout package.json package-lock.json
-    git checkout $BRANCH
-    git pull origin $BRANCH
+    git checkout legacy # TODO: Remove references to 'legacy' branch once renex-js is compatible with the new SDK
+    git pull origin legacy
     cd $BASE_FOLDER
 else
-    git clone -b $BRANCH git@github.com:republicprotocol/renex-sdk-ts.git "$SDK_MODULE_FOLDER"
+    git clone -b legacy git@github.com:republicprotocol/renex-sdk-ts.git "$SDK_MODULE_FOLDER"
 fi
 
 # Get latest renex-js commit hash and author
@@ -126,7 +126,7 @@ printf "${YELLOW}%`tput cols`s${RESET}\n\n"|tr ' ' '='
 
 echo "Version built from the following modules:"
 echo -e "${GREEN}renex-js:${BRANCH}${RESET} [${YELLOW}${LATEST_RENEX_COMMIT}${RESET}] commited by ${YELLOW}${LATEST_RENEX_AUTHOR}${RESET}"
-echo -e "${GREEN}renex-sdk-ts:$BRANCH${RESET} [${YELLOW}${LATEST_SDK_COMMIT}${RESET}] commited by ${YELLOW}${LATEST_SDK_AUTHOR}${RESET}"
+echo -e "${GREEN}renex-sdk-ts:legacy${RESET} [${YELLOW}${LATEST_SDK_COMMIT}${RESET}] commited by ${YELLOW}${LATEST_SDK_AUTHOR}${RESET}"
 echo ""
 
 if [ "$NETWORK" == "mainnet" ] || [ "$NOVERIFY" == false ]; then
