@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "3a0faa5e1b1bc1b23d68200f0f151afd",
-    "url": "/static/media/sourcecodepro-bold.3a0faa5e.woff2"
+    "revision": "2fb0a9fa4cc65775174a0fe1aab85bcc",
+    "url": "/static/media/sourcecodepro-regular.2fb0a9fa.woff"
   },
   {
-    "revision": "55a86ba22a033f38b752",
+    "revision": "b46b2f033cb7ee6d1eb7",
     "url": "/static/css/main.68b6ab96.chunk.css"
   },
   {
@@ -56,6 +56,10 @@ self.__precacheManifest = [
     "url": "/static/media/pingfangsc-light.69c29c38.woff2"
   },
   {
+    "revision": "6c81380d5054c0c0a62654406afafa41",
+    "url": "/static/media/pingfangsc-light.6c81380d.woff"
+  },
+  {
     "revision": "1ee42df1091384f70b61b8f1be03ded3",
     "url": "/static/media/pingfangsc.1ee42df1.woff2"
   },
@@ -64,16 +68,12 @@ self.__precacheManifest = [
     "url": "/static/media/sourcecodepro-regular.7dcc035e.woff2"
   },
   {
-    "revision": "2fb0a9fa4cc65775174a0fe1aab85bcc",
-    "url": "/static/media/sourcecodepro-regular.2fb0a9fa.woff"
+    "revision": "3a0faa5e1b1bc1b23d68200f0f151afd",
+    "url": "/static/media/sourcecodepro-bold.3a0faa5e.woff2"
   },
   {
-    "revision": "cbc9cb77d24975f2b43a71881d0c7326",
-    "url": "/static/media/pingfangsc.cbc9cb77.woff"
-  },
-  {
-    "revision": "55a86ba22a033f38b752",
-    "url": "/static/js/main.55a86ba2.chunk.js"
+    "revision": "b46b2f033cb7ee6d1eb7",
+    "url": "/static/js/main.b46b2f03.chunk.js"
   },
   {
     "revision": "c5019c9ecc01759135f350d45429bb31",
@@ -88,12 +88,12 @@ self.__precacheManifest = [
     "url": "/static/media/warning.ed733238.svg"
   },
   {
-    "revision": "0dae5eb2e856b5cb2c71fd3c1cf30e32",
-    "url": "/static/media/info.0dae5eb2.svg"
-  },
-  {
     "revision": "c0a7929f900702e313ede88bde1cc5ac",
     "url": "/static/media/wyre.c0a7929f.svg"
+  },
+  {
+    "revision": "0dae5eb2e856b5cb2c71fd3c1cf30e32",
+    "url": "/static/media/info.0dae5eb2.svg"
   },
   {
     "revision": "5ab48892bc9e1ee8dce320ba6fea0a19",
@@ -104,47 +104,47 @@ self.__precacheManifest = [
     "url": "/static/media/metamask.bfac34e8.jpg"
   },
   {
-    "revision": "6c81380d5054c0c0a62654406afafa41",
-    "url": "/static/media/pingfangsc-light.6c81380d.woff"
-  },
-  {
     "revision": "155b611464c859bf587af802dcb2ee58",
     "url": "/static/media/ledger.155b6114.jpg"
-  },
-  {
-    "revision": "d44c43c848bc0bc4dcf9b41a4b43f034",
-    "url": "/static/media/metamask.d44c43c8.svg"
-  },
-  {
-    "revision": "a0672f36d7e4a832c34b30290173dfbb",
-    "url": "/static/media/ledger.a0672f36.svg"
-  },
-  {
-    "revision": "70757b1d396fce7e064fc6767f13b323",
-    "url": "/static/media/trezor.70757b1d.svg"
-  },
-  {
-    "revision": "58a9ecbeddd8f3d5cac5cae8be8cfca5",
-    "url": "/static/media/key.58a9ecbe.svg"
-  },
-  {
-    "revision": "688b3d2df0f58b1bdb4f390e87a33eb7",
-    "url": "/static/media/keystore.688b3d2d.svg"
   },
   {
     "revision": "f1369e0462255e803087eeb184cdff69",
     "url": "/static/media/keystore.f1369e04.jpeg"
   },
   {
+    "revision": "a0672f36d7e4a832c34b30290173dfbb",
+    "url": "/static/media/ledger.a0672f36.svg"
+  },
+  {
+    "revision": "d44c43c848bc0bc4dcf9b41a4b43f034",
+    "url": "/static/media/metamask.d44c43c8.svg"
+  },
+  {
+    "revision": "70757b1d396fce7e064fc6767f13b323",
+    "url": "/static/media/trezor.70757b1d.svg"
+  },
+  {
+    "revision": "688b3d2df0f58b1bdb4f390e87a33eb7",
+    "url": "/static/media/keystore.688b3d2d.svg"
+  },
+  {
+    "revision": "58a9ecbeddd8f3d5cac5cae8be8cfca5",
+    "url": "/static/media/key.58a9ecbe.svg"
+  },
+  {
     "revision": "a7414b727a63400246bc0575ecd6500e",
     "url": "/static/media/pingfangsc-medium.a7414b72.woff2"
+  },
+  {
+    "revision": "cbc9cb77d24975f2b43a71881d0c7326",
+    "url": "/static/media/pingfangsc.cbc9cb77.woff"
   },
   {
     "revision": "8fdd5a9ccc6b0f8fe01701d751dd25c9",
     "url": "/static/media/pingfangsc-medium.8fdd5a9c.woff"
   },
   {
-    "revision": "1862f63a43e280dbc9c0aabfc1b67c63",
+    "revision": "821d98bbfe8a93ee025aaa33695a5038",
     "url": "/index.html"
   }
 ];
