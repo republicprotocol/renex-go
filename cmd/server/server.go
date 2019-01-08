@@ -104,7 +104,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request, networkData []byte, l
 		window.INFURA_KEY="` + infuraKey + `";
 		window.SENTRY_DSN="` + sentryDSN + `";
 		window.NETWORK=` + string(networkData) + `;
-		window.RENEX_VERSION='` + strings.TrimSpace(string(latestCommit)) + `');
+		window.RENEX_VERSION='` + strings.TrimSpace(string(latestCommit)) + `';
 		console.log('renex-js commit hash: ' + window.RENEX_VERSION);
 		if (window.NETWORK.ethNetwork !== 'main') {
 			document.title = 'RenEx Beta (' + window.NETWORK.ethNetworkLabel + ' Test Network)';
