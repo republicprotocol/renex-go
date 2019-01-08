@@ -75,6 +75,7 @@ if [ -d $SDK_MODULE_FOLDER ]; then
     cd $SDK_MODULE_FOLDER
     # `npm install` may changes these files
     git checkout package.json package-lock.json
+    git fetch
     git checkout legacy # TODO: Remove references to 'legacy' branch once renex-js is compatible with the new SDK
     git pull origin legacy
     cd $BASE_FOLDER
@@ -100,7 +101,7 @@ echo -n "${COMBINED_HASH}" > env/latest_commit.txt
 
 
 # Remove the old build folder
-rm -rf $UI_FOLDER
+rm -r $UI_FOLDER
 
 # Build SDK
 cd $SDK_MODULE_FOLDER
@@ -111,7 +112,8 @@ cd $BASE_FOLDER
 # Link UI and SDK and build UI
 cd $RENEX_MODULE_FOLDER
 npm install
-cp -r $SDK_MODULE_FOLDER/lib ./node_modules/renex-sdk-ts
+rm -r ./node_modules/renex-sdk-ts || true
+cp -r $SDK_MODULE_FOLDER ./node_modules/renex-sdk-ts
 npm run build
 cd $BASE_FOLDER
 mv $RENEX_MODULE_FOLDER/build $UI_FOLDER
