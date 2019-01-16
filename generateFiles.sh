@@ -20,7 +20,7 @@ YELLOW='\033[0;33m'
 usage() {
     echo "Please specify a network to deploy using -n"
     echo ""
-    echo -e "  Available networks: ${BLUE}mainnet${RESET}, ${PURPLE}testnet${RESET}, ${CYAN}nightly${RESET}"
+    echo -e "  Available networks: ${BLUE}mainnet${RESET} (legacy), ${PURPLE}testnet${RESET}"
     echo ""
     exit 1
 }
@@ -40,13 +40,12 @@ HEROKU_APP="renex-ui-$NETWORK"
 
 if [ "$NETWORK" == "mainnet" ] && [ "$BRANCH" == "" ]; then
     BRANCH="master"
+    SDK_BRANCH="legacy"
     COLOR="${BLUE}"
 elif [ "$NETWORK" == "testnet" ] && [ "$BRANCH" == "" ]; then
     BRANCH="develop"
+    SDK_BRANCH=$BRANCH
     COLOR="${PURPLE}"
-elif [ "$NETWORK" == "nightly" ] && [ "$BRANCH" == "" ]; then
-    BRANCH="nightly"
-    COLOR="${CYAN}"
 elif [ "$BRANCH" != "" ]; then
     COLOR="${CYAN}"
     heroku apps:create $HEROKU_APP
@@ -55,12 +54,17 @@ else
     exit 1
 fi
 
-echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:$BRANCH${RESET} to ${COLOR}${NETWORK}${RESET}...\n"
+echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:${SDK_BRANCH}${RESET} to ${COLOR}${NETWORK}${RESET}...\n"
 
 # Print commands as they are executed
 set -x
 
-# Add modules
+
+
+### RENEX ###
+touch ./env/latest_renex_commit.txt
+PREVIOUS_RENEX_COMMIT="`cat ./env/latest_renex_commit.txt`"
+
 if [ -d $RENEX_MODULE_FOLDER ]; then
     cd $RENEX_MODULE_FOLDER
     # `npm install` may changes these files
@@ -71,23 +75,31 @@ if [ -d $RENEX_MODULE_FOLDER ]; then
 else
     git clone -b $BRANCH git@github.com:republicprotocol/renex-js.git "$RENEX_MODULE_FOLDER"
 fi
-if [ -d $SDK_MODULE_FOLDER ]; then
-    cd $SDK_MODULE_FOLDER
-    # `npm install` may changes these files
-    git checkout package.json package-lock.json
-    git fetch
-    git checkout $BRANCH
-    git pull origin $BRANCH
-    cd $BASE_FOLDER
-else
-    git clone -b $BRANCH git@github.com:republicprotocol/renex-sdk-ts.git "$SDK_MODULE_FOLDER"
-fi
 
 # Get latest renex-js commit hash and author
 cd "$RENEX_MODULE_FOLDER"
 LATEST_RENEX_COMMIT="`git rev-parse --short HEAD`"
 LATEST_RENEX_AUTHOR="`git --no-pager  log --format='%aN <%aE>' HEAD^!`"
 cd "$BASE_FOLDER"
+
+
+
+
+### SDK ###
+touch ./env/latest_sdk_commit.txt
+PREVIOUS_SDK_COMMIT="`cat ./env/latest_sdk_commit.txt`"
+
+if [ -d $SDK_MODULE_FOLDER ]; then
+    cd $SDK_MODULE_FOLDER
+    # `npm install` may changes these files
+    git checkout package.json package-lock.json
+    git fetch
+    git checkout $SDK_BRANCH
+    git pull origin $SDK_BRANCH
+    cd $BASE_FOLDER
+else
+    git clone -b $BRANCH git@github.com:republicprotocol/renex-sdk-ts.git "$SDK_MODULE_FOLDER"
+fi
 
 # Get latest renex-sdk-ts commit hash
 cd "$SDK_MODULE_FOLDER"
@@ -97,26 +109,40 @@ cd "$BASE_FOLDER"
 
 COMBINED_HASH="$LATEST_RENEX_COMMIT//$LATEST_SDK_COMMIT"
 
-echo -n "${COMBINED_HASH}" > env/latest_commit.txt
-
 
 # Remove the old build folder
-rm -r $UI_FOLDER
+rm -r $UI_FOLDER || true
 
 # Build SDK
-cd $SDK_MODULE_FOLDER
-npm install
-npm run build:dev
-cd $BASE_FOLDER
+if [ "$PREVIOUS_SDK_COMMIT" != "$LATEST_SDK_COMMIT" ];
+then
+    cd $SDK_MODULE_FOLDER
+    npm install
+    npm run build:dev
+    cd $BASE_FOLDER
+fi
 
+echo -n "${LATEST_SDK_COMMIT}" > env/latest_sdk_commit.txt
+
+if [ "$PREVIOUS_SDK_COMMIT" != "$LATEST_SDK_COMMIT" ] || [ "$PREVIOUS_RENEX_COMMIT" != "$LATEST_RENEX_COMMIT" ] ;
+then
 # Link UI and SDK and build UI
 cd $RENEX_MODULE_FOLDER
+
 npm install
-rm -r ./node_modules/renex-sdk-ts || true
-cp -r $SDK_MODULE_FOLDER ./node_modules/renex-sdk-ts
+mkdir ./node_modules/@renex/renex || true
+mkdir ./node_modules/renex-sdk-ts || true
+cp -r $SDK_MODULE_FOLDER/dist ./node_modules/@renex/renex
+cp -r $SDK_MODULE_FOLDER/dist ./node_modules/renex-sdk-ts
 npm run build
 cd $BASE_FOLDER
-mv $RENEX_MODULE_FOLDER/build $UI_FOLDER
+fi
+
+echo -n "${LATEST_RENEX_COMMIT}" > env/latest_renex_commit.txt
+
+cp -r $RENEX_MODULE_FOLDER/build $UI_FOLDER
+echo -n "${COMBINED_HASH}" > env/latest_commit.txt
+
 
 set +x
 
@@ -128,7 +154,7 @@ printf "${YELLOW}%`tput cols`s${RESET}\n\n"|tr ' ' '='
 
 echo "Version built from the following modules:"
 echo -e "${GREEN}renex-js:${BRANCH}${RESET} [${YELLOW}${LATEST_RENEX_COMMIT}${RESET}] commited by ${YELLOW}${LATEST_RENEX_AUTHOR}${RESET}"
-echo -e "${GREEN}renex-sdk-ts:$BRANCH${RESET} [${YELLOW}${LATEST_SDK_COMMIT}${RESET}] commited by ${YELLOW}${LATEST_SDK_AUTHOR}${RESET}"
+echo -e "${GREEN}renex-sdk-ts:${SDK_BRANCH}${RESET} [${YELLOW}${LATEST_SDK_COMMIT}${RESET}] commited by ${YELLOW}${LATEST_SDK_AUTHOR}${RESET}"
 echo ""
 
 if [ "$NETWORK" == "mainnet" ] || [ "$NOVERIFY" == false ]; then
