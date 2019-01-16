@@ -1,9 +1,9 @@
 {
-  "main.css": "/static/css/main.68b6ab96.chunk.css",
-  "main.js": "/static/js/main.b46b2f03.chunk.js",
-  "main.js.map": "/static/js/main.b46b2f03.chunk.js.map",
-  "static/js/1.b9d4014c.chunk.js": "/static/js/1.b9d4014c.chunk.js",
-  "static/js/1.b9d4014c.chunk.js.map": "/static/js/1.b9d4014c.chunk.js.map",
+  "main.css": "/static/css/main.02c15a2d.chunk.css",
+  "main.js": "/static/js/main.4aadc4f1.chunk.js",
+  "main.js.map": "/static/js/main.4aadc4f1.chunk.js.map",
+  "static/js/1.336872f9.chunk.js": "/static/js/1.336872f9.chunk.js",
+  "static/js/1.336872f9.chunk.js.map": "/static/js/1.336872f9.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/index.scss": "/static/media/pingfangsc-medium.8fdd5a9c.woff",
@@ -16,8 +16,8 @@
   "static/media/wbtc.svg": "/static/media/wbtc.8122efc9.svg",
   "static/media/zrx.svg": "/static/media/zrx.7ede344d.svg",
   "static/media/dgx.svg": "/static/media/dgx.09966c0f.svg",
-  "static/css/main.68b6ab96.chunk.css.map": "/static/css/main.68b6ab96.chunk.css.map",
+  "static/css/main.02c15a2d.chunk.css.map": "/static/css/main.02c15a2d.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.a620c0b1aedcf08f694520109421d83b.js": "/precache-manifest.a620c0b1aedcf08f694520109421d83b.js",
+  "precache-manifest.1ffea42436cfb7f3a0cda2fa46c2fb59.js": "/precache-manifest.1ffea42436cfb7f3a0cda2fa46c2fb59.js",
   "service-worker.js": "/service-worker.js"
 }
