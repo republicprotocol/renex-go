@@ -1,12 +1,12 @@
 {
   "main.css": "/static/css/main.d7d586da.chunk.css",
-  "main.js": "/static/js/main.e7ed7ca5.chunk.js",
-  "main.js.map": "/static/js/main.e7ed7ca5.chunk.js.map",
+  "main.js": "/static/js/main.dc798b7e.chunk.js",
+  "main.js.map": "/static/js/main.dc798b7e.chunk.js.map",
   "static/js/1.4e3095ba.chunk.js": "/static/js/1.4e3095ba.chunk.js",
   "static/js/1.4e3095ba.chunk.js.map": "/static/js/1.4e3095ba.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/index.scss": "/static/media/pingfangsc-medium.8fdd5a9c.woff",
+  "static/media/index.scss": "/static/media/pingfangsc-light.6c81380d.woff",
   "static/media/btc.svg": "/static/media/btc.dd58cd55.svg",
   "static/media/eth.svg": "/static/media/eth.ac24c334.svg",
   "static/media/omg.svg": "/static/media/omg.cbd0e5e9.svg",
@@ -18,6 +18,6 @@
   "static/media/dgx.svg": "/static/media/dgx.09966c0f.svg",
   "static/css/main.d7d586da.chunk.css.map": "/static/css/main.d7d586da.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.f92084d35c400d3bad7ede70eb148a51.js": "/precache-manifest.f92084d35c400d3bad7ede70eb148a51.js",
+  "precache-manifest.e79d153f7f0a7157e843d9beb4d8e5e6.js": "/precache-manifest.e79d153f7f0a7157e843d9beb4d8e5e6.js",
   "service-worker.js": "/service-worker.js"
 }
