@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "a0672f36d7e4a832c34b30290173dfbb",
-    "url": "/static/media/ledger.a0672f36.svg"
+    "revision": "d44c43c848bc0bc4dcf9b41a4b43f034",
+    "url": "/static/media/metamask.d44c43c8.svg"
   },
   {
-    "revision": "cee029364d1dd7131e3d",
+    "revision": "0a6635795257a36a35b0",
     "url": "/static/css/main.914eb907.chunk.css"
   },
   {
@@ -72,20 +72,20 @@ self.__precacheManifest = [
     "url": "/static/media/kyber.5ab48892.svg"
   },
   {
-    "revision": "cee029364d1dd7131e3d",
-    "url": "/static/js/main.cee02936.chunk.js"
+    "revision": "0a6635795257a36a35b0",
+    "url": "/static/js/main.0a663579.chunk.js"
   },
   {
-    "revision": "d44c43c848bc0bc4dcf9b41a4b43f034",
-    "url": "/static/media/metamask.d44c43c8.svg"
-  },
-  {
-    "revision": "688b3d2df0f58b1bdb4f390e87a33eb7",
-    "url": "/static/media/keystore.688b3d2d.svg"
+    "revision": "a0672f36d7e4a832c34b30290173dfbb",
+    "url": "/static/media/ledger.a0672f36.svg"
   },
   {
     "revision": "70757b1d396fce7e064fc6767f13b323",
     "url": "/static/media/trezor.70757b1d.svg"
+  },
+  {
+    "revision": "688b3d2df0f58b1bdb4f390e87a33eb7",
+    "url": "/static/media/keystore.688b3d2d.svg"
   },
   {
     "revision": "58a9ecbeddd8f3d5cac5cae8be8cfca5",
@@ -108,12 +108,12 @@ self.__precacheManifest = [
     "url": "/static/media/sourcecodepro-regular.2fb0a9fa.woff"
   },
   {
-    "revision": "bfac34e8d4e04e52abb2f04f3072888e",
-    "url": "/static/media/metamask.bfac34e8.jpg"
-  },
-  {
     "revision": "c5019c9ecc01759135f350d45429bb31",
     "url": "/static/media/sourcecodepro-bold.c5019c9e.woff"
+  },
+  {
+    "revision": "bfac34e8d4e04e52abb2f04f3072888e",
+    "url": "/static/media/metamask.bfac34e8.jpg"
   },
   {
     "revision": "f1369e0462255e803087eeb184cdff69",
@@ -136,15 +136,15 @@ self.__precacheManifest = [
     "url": "/static/media/pingfangsc.cbc9cb77.woff"
   },
   {
-    "revision": "6c81380d5054c0c0a62654406afafa41",
-    "url": "/static/media/pingfangsc-light.6c81380d.woff"
-  },
-  {
     "revision": "8fdd5a9ccc6b0f8fe01701d751dd25c9",
     "url": "/static/media/pingfangsc-medium.8fdd5a9c.woff"
   },
   {
-    "revision": "5fc72601ee651d380d516fbe2b2b37f5",
+    "revision": "6c81380d5054c0c0a62654406afafa41",
+    "url": "/static/media/pingfangsc-light.6c81380d.woff"
+  },
+  {
+    "revision": "c3762ae8840d8281e434dde95b18b48e",
     "url": "/index.html"
   }
 ];

@@ -1,12 +1,12 @@
 {
   "main.css": "/static/css/main.914eb907.chunk.css",
-  "main.js": "/static/js/main.cee02936.chunk.js",
-  "main.js.map": "/static/js/main.cee02936.chunk.js.map",
+  "main.js": "/static/js/main.0a663579.chunk.js",
+  "main.js.map": "/static/js/main.0a663579.chunk.js.map",
   "static/js/1.bcc851dd.chunk.js": "/static/js/1.bcc851dd.chunk.js",
   "static/js/1.bcc851dd.chunk.js.map": "/static/js/1.bcc851dd.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/index.scss": "/static/media/pingfangsc-medium.8fdd5a9c.woff",
+  "static/media/index.scss": "/static/media/pingfangsc-light.6c81380d.woff",
   "static/media/btc.svg": "/static/media/btc.dd58cd55.svg",
   "static/media/eth.svg": "/static/media/eth.ac24c334.svg",
   "static/media/omg.svg": "/static/media/omg.cbd0e5e9.svg",
@@ -18,6 +18,6 @@
   "static/media/dgx.svg": "/static/media/dgx.09966c0f.svg",
   "static/css/main.914eb907.chunk.css.map": "/static/css/main.914eb907.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.29dfc9ff86fde5de7e581a6b9197ca75.js": "/precache-manifest.29dfc9ff86fde5de7e581a6b9197ca75.js",
+  "precache-manifest.65ea435a93da3388fe616217d6a347aa.js": "/precache-manifest.65ea435a93da3388fe616217d6a347aa.js",
   "service-worker.js": "/service-worker.js"
 }
