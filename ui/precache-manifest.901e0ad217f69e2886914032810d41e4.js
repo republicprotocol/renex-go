@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "d44c43c848bc0bc4dcf9b41a4b43f034",
-    "url": "/static/media/metamask.d44c43c8.svg"
+    "revision": "a0672f36d7e4a832c34b30290173dfbb",
+    "url": "/static/media/ledger.a0672f36.svg"
   },
   {
     "revision": "c3a011915fd746f591ab",
@@ -60,28 +60,24 @@ self.__precacheManifest = [
     "url": "/static/media/info.0dae5eb2.svg"
   },
   {
-    "revision": "5ab48892bc9e1ee8dce320ba6fea0a19",
-    "url": "/static/media/kyber.5ab48892.svg"
+    "revision": "ed733238d2f1d4698bd9800a95dac313",
+    "url": "/static/media/warning.ed733238.svg"
   },
   {
     "revision": "c0a7929f900702e313ede88bde1cc5ac",
     "url": "/static/media/wyre.c0a7929f.svg"
   },
   {
-    "revision": "ed733238d2f1d4698bd9800a95dac313",
-    "url": "/static/media/warning.ed733238.svg"
+    "revision": "5ab48892bc9e1ee8dce320ba6fea0a19",
+    "url": "/static/media/kyber.5ab48892.svg"
   },
   {
     "revision": "c3a011915fd746f591ab",
     "url": "/static/js/main.c3a01191.chunk.js"
   },
   {
-    "revision": "688b3d2df0f58b1bdb4f390e87a33eb7",
-    "url": "/static/media/keystore.688b3d2d.svg"
-  },
-  {
-    "revision": "a0672f36d7e4a832c34b30290173dfbb",
-    "url": "/static/media/ledger.a0672f36.svg"
+    "revision": "d44c43c848bc0bc4dcf9b41a4b43f034",
+    "url": "/static/media/metamask.d44c43c8.svg"
   },
   {
     "revision": "58a9ecbeddd8f3d5cac5cae8be8cfca5",
@@ -90,6 +86,10 @@ self.__precacheManifest = [
   {
     "revision": "70757b1d396fce7e064fc6767f13b323",
     "url": "/static/media/trezor.70757b1d.svg"
+  },
+  {
+    "revision": "688b3d2df0f58b1bdb4f390e87a33eb7",
+    "url": "/static/media/keystore.688b3d2d.svg"
   },
   {
     "revision": "155b611464c859bf587af802dcb2ee58",
@@ -104,16 +104,16 @@ self.__precacheManifest = [
     "url": "/static/media/sourcecodepro-bold.3a0faa5e.woff2"
   },
   {
-    "revision": "c5019c9ecc01759135f350d45429bb31",
-    "url": "/static/media/sourcecodepro-bold.c5019c9e.woff"
-  },
-  {
     "revision": "2fb0a9fa4cc65775174a0fe1aab85bcc",
     "url": "/static/media/sourcecodepro-regular.2fb0a9fa.woff"
   },
   {
     "revision": "bfac34e8d4e04e52abb2f04f3072888e",
     "url": "/static/media/metamask.bfac34e8.jpg"
+  },
+  {
+    "revision": "c5019c9ecc01759135f350d45429bb31",
+    "url": "/static/media/sourcecodepro-bold.c5019c9e.woff"
   },
   {
     "revision": "f1369e0462255e803087eeb184cdff69",
