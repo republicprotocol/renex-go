@@ -1,12 +1,12 @@
 {
   "main.css": "/static/css/main.2b882c99.chunk.css",
-  "main.js": "/static/js/main.996ef6ed.chunk.js",
-  "main.js.map": "/static/js/main.996ef6ed.chunk.js.map",
-  "static/js/1.0b0defcc.chunk.js": "/static/js/1.0b0defcc.chunk.js",
-  "static/js/1.0b0defcc.chunk.js.map": "/static/js/1.0b0defcc.chunk.js.map",
+  "main.js": "/static/js/main.4bea41ff.chunk.js",
+  "main.js.map": "/static/js/main.4bea41ff.chunk.js.map",
+  "static/js/1.cd3ddd5c.chunk.js": "/static/js/1.cd3ddd5c.chunk.js",
+  "static/js/1.cd3ddd5c.chunk.js.map": "/static/js/1.cd3ddd5c.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/index.scss": "/static/media/pingfangsc-light.6c81380d.woff",
+  "static/media/index.scss": "/static/media/pingfangsc-medium.8fdd5a9c.woff",
   "static/media/btc.svg": "/static/media/btc.dd58cd55.svg",
   "static/media/eth.svg": "/static/media/eth.ac24c334.svg",
   "static/media/omg.svg": "/static/media/omg.cbd0e5e9.svg",
@@ -18,6 +18,6 @@
   "static/media/dgx.svg": "/static/media/dgx.09966c0f.svg",
   "static/css/main.2b882c99.chunk.css.map": "/static/css/main.2b882c99.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.b720797d03e76addc05f69a866bd8ee8.js": "/precache-manifest.b720797d03e76addc05f69a866bd8ee8.js",
+  "precache-manifest.12eed8c52c7a50e2f82df1e1ab511d78.js": "/precache-manifest.12eed8c52c7a50e2f82df1e1ab511d78.js",
   "service-worker.js": "/service-worker.js"
 }
