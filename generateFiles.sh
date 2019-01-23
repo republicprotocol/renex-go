@@ -126,16 +126,22 @@ echo -n "${LATEST_SDK_COMMIT}" > env/latest_sdk_commit.txt
 
 if [ "$PREVIOUS_SDK_COMMIT" != "$LATEST_SDK_COMMIT" ] || [ "$PREVIOUS_RENEX_COMMIT" != "$LATEST_RENEX_COMMIT" ] ;
 then
-# Link UI and SDK and build UI
-cd $RENEX_MODULE_FOLDER
+    # Link UI and SDK and build UI
+    cd $RENEX_MODULE_FOLDER
 
-npm install
-mkdir ./node_modules/@renex/renex || true
-mkdir ./node_modules/renex-sdk-ts || true
-cp -r $SDK_MODULE_FOLDER/dist ./node_modules/@renex/renex
-cp -r $SDK_MODULE_FOLDER/dist ./node_modules/renex-sdk-ts
-npm run build
-cd $BASE_FOLDER
+    npm install
+    mkdir ./node_modules/@renex/renex || true
+    mkdir ./node_modules/renex-sdk-ts || true
+    rm -r ./node_modules/@renex/renex/dist || true
+    rm -r ./node_modules/renex-sdk-ts/dist || true
+    rm -rf ./node_modules/@renex/renex/node_modules || true
+    rm -rf ./node_modules/renex-sdk-ts/node_modules || true
+    cp -r $SDK_MODULE_FOLDER/dist ./node_modules/@renex/renex
+    cp -r $SDK_MODULE_FOLDER/dist ./node_modules/renex-sdk-ts
+    cp -r $SDK_MODULE_FOLDER/node_modules ./node_modules/@renex/renex
+    cp -r $SDK_MODULE_FOLDER/node_modules ./node_modules/renex-sdk-ts
+    npm run build
+    cd $BASE_FOLDER
 fi
 
 echo -n "${LATEST_RENEX_COMMIT}" > env/latest_renex_commit.txt
