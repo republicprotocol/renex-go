@@ -1,7 +1,7 @@
 {
     "network": "testnet",
     "ingress": "https://renex-ingress-testnet.herokuapp.com",
-    "infura": "https://kovan.infura.io",
+    "infura": "kovan.infura.io/v3/",
     "etherscan": "https://kovan.etherscan.io",
     "ethNetwork": "kovan",
     "ethNetworkLabel": "Kovan",
