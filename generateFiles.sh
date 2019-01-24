@@ -40,7 +40,8 @@ HEROKU_APP="renex-ui-$NETWORK"
 
 if [ "$NETWORK" == "mainnet" ] && [ "$BRANCH" == "" ]; then
     BRANCH="master"
-    SDK_BRANCH="legacy"
+    # SDK_BRANCH="legacy"
+    SDK_BRANCH=$BRANCH
     COLOR="${BLUE}"
 elif [ "$NETWORK" == "testnet" ] && [ "$BRANCH" == "" ]; then
     BRANCH="develop"
@@ -109,6 +110,10 @@ cd "$BASE_FOLDER"
 
 COMBINED_HASH="$LATEST_RENEX_COMMIT//$LATEST_SDK_COMMIT"
 
+cd moniker
+COMBINED_HASH_ID="`SEED=$COMBINED_HASH node generate.js`"
+cd ../
+
 
 # Remove the old build folder
 rm -r $UI_FOLDER || true
@@ -148,6 +153,7 @@ echo -n "${LATEST_RENEX_COMMIT}" > env/latest_renex_commit.txt
 
 cp -r $RENEX_MODULE_FOLDER/build $UI_FOLDER
 echo -n "${COMBINED_HASH}" > env/latest_commit.txt
+echo -n "${COMBINED_HASH_ID}" > env/latest_identifier.txt
 
 
 set +x
@@ -176,6 +182,7 @@ fi
 set -x
 
 git add ui env/latest_commit.txt
+git add ui env/latest_identifier.txt
 if [ "$(git diff --cached)" ]; then
     git commit -m "ui: built ${COMBINED_HASH}" --no-verify
     git push
@@ -197,4 +204,4 @@ git push "heroku-${NETWORK}" master
 
 set +x
 
-echo -e "\nPushed ${COMBINED_HASH} to ${COLOR}${NETWORK}${RESET}\n"
+echo -e "\nPushed ${COMBINED_HASH_ID} to ${COLOR}${NETWORK}${RESET}\n"

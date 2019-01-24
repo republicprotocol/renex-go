@@ -28,7 +28,7 @@ func main() {
 		log.Fatalf("cannot read network environment")
 	}
 
-	latestCommit, err := ioutil.ReadFile("env/latest_commit.txt")
+	latestCommit, err := ioutil.ReadFile("env/latest_identifier.txt")
 	if err != nil {
 		log.Fatalf("cannot read latest commit: %v", err)
 	}
