@@ -1,7 +1,7 @@
 {
     "network": "mainnet",
     "ingress": "https://renex-ingress-mainnet.herokuapp.com",
-    "infura": "https://mainnet.infura.io",
+    "infura": "https://mainnet.infura.io/v3",
     "etherscan": "https://etherscan.io",
     "ethNetwork": "main",
     "ethNetworkLabel": "Main",
