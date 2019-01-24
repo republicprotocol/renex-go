@@ -56,24 +56,32 @@ self.__precacheManifest = [
     "url": "/static/media/logo.91aa6985.svg"
   },
   {
-    "revision": "0dae5eb2e856b5cb2c71fd3c1cf30e32",
-    "url": "/static/media/info.0dae5eb2.svg"
+    "revision": "5ab48892bc9e1ee8dce320ba6fea0a19",
+    "url": "/static/media/kyber.5ab48892.svg"
   },
   {
-    "revision": "ed733238d2f1d4698bd9800a95dac313",
-    "url": "/static/media/warning.ed733238.svg"
+    "revision": "0dae5eb2e856b5cb2c71fd3c1cf30e32",
+    "url": "/static/media/info.0dae5eb2.svg"
   },
   {
     "revision": "c0a7929f900702e313ede88bde1cc5ac",
     "url": "/static/media/wyre.c0a7929f.svg"
   },
   {
-    "revision": "5ab48892bc9e1ee8dce320ba6fea0a19",
-    "url": "/static/media/kyber.5ab48892.svg"
+    "revision": "ed733238d2f1d4698bd9800a95dac313",
+    "url": "/static/media/warning.ed733238.svg"
   },
   {
     "revision": "3909908109ac024babe5",
     "url": "/static/js/main.39099081.chunk.js"
+  },
+  {
+    "revision": "70757b1d396fce7e064fc6767f13b323",
+    "url": "/static/media/trezor.70757b1d.svg"
+  },
+  {
+    "revision": "688b3d2df0f58b1bdb4f390e87a33eb7",
+    "url": "/static/media/keystore.688b3d2d.svg"
   },
   {
     "revision": "a0672f36d7e4a832c34b30290173dfbb",
@@ -82,14 +90,6 @@ self.__precacheManifest = [
   {
     "revision": "58a9ecbeddd8f3d5cac5cae8be8cfca5",
     "url": "/static/media/key.58a9ecbe.svg"
-  },
-  {
-    "revision": "688b3d2df0f58b1bdb4f390e87a33eb7",
-    "url": "/static/media/keystore.688b3d2d.svg"
-  },
-  {
-    "revision": "70757b1d396fce7e064fc6767f13b323",
-    "url": "/static/media/trezor.70757b1d.svg"
   },
   {
     "revision": "155b611464c859bf587af802dcb2ee58",
@@ -104,12 +104,12 @@ self.__precacheManifest = [
     "url": "/static/media/sourcecodepro-bold.3a0faa5e.woff2"
   },
   {
-    "revision": "c5019c9ecc01759135f350d45429bb31",
-    "url": "/static/media/sourcecodepro-bold.c5019c9e.woff"
-  },
-  {
     "revision": "2fb0a9fa4cc65775174a0fe1aab85bcc",
     "url": "/static/media/sourcecodepro-regular.2fb0a9fa.woff"
+  },
+  {
+    "revision": "c5019c9ecc01759135f350d45429bb31",
+    "url": "/static/media/sourcecodepro-bold.c5019c9e.woff"
   },
   {
     "revision": "bfac34e8d4e04e52abb2f04f3072888e",
