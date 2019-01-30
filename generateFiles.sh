@@ -40,12 +40,9 @@ HEROKU_APP="renex-ui-$NETWORK"
 
 if [ "$NETWORK" == "mainnet" ] && [ "$BRANCH" == "" ]; then
     BRANCH="master"
-    # SDK_BRANCH="legacy"
-    SDK_BRANCH=$BRANCH
     COLOR="${BLUE}"
 elif [ "$NETWORK" == "testnet" ] && [ "$BRANCH" == "" ]; then
     BRANCH="develop"
-    SDK_BRANCH=$BRANCH
     COLOR="${PURPLE}"
 elif [ "$BRANCH" != "" ]; then
     COLOR="${CYAN}"
@@ -54,6 +51,8 @@ else
     usage
     exit 1
 fi
+
+SDK_BRANCH=$BRANCH
 
 echo -e "\nDeploying ${GREEN}renex-js:${BRANCH}${RESET} with ${GREEN}renex-sdk-ts:${SDK_BRANCH}${RESET} to ${COLOR}${NETWORK}${RESET}...\n"
 
